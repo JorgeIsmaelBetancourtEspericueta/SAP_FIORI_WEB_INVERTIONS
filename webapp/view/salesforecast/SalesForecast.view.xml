@@ -1,0 +1,15 @@
+<mvc:View
+    controllerName="com.inv.sapfioriwebinvertions.controller.SalesForecast"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+>
+    <m:Page
+        id="IdPageSalesForecast"
+        title="{i18n>title}"
+    >
+        <m:Text
+            id="IdText1SalesForecast"
+            text="CONTENIDO DE LA PAGINA PRINCIPAL DEL PRONOSTICO DE VENTAS"
+        />
+    </m:Page>
+</mvc:View>
