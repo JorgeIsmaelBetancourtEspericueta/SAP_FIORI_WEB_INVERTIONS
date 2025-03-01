@@ -1,0 +1,35 @@
+{
+    "selectedKey": "page20",
+    "navigation": [
+        {
+            "id": "01",
+            "key": "page01",
+            "title": "Inicio",
+            "icon": "sap-icon://home"
+        },
+        {
+            "id": "02",
+            "key": "page02",
+            "title": "Cerrar sesión",
+            "icon": "sap-icon://system-exit"
+        },
+        {
+            "id": "03",
+            "key": "page03",
+            "title": "Login (Cambiar usuario)",
+            "icon": "sap-icon://user-edit"
+        },
+        {
+            "id": "20",
+            "key": "page20",
+            "title": "Pronóstico de Ventas",
+            "icon": "sap-icon://chart-table-view"
+        },
+        {
+            "id": "50",
+            "key": "page50",
+            "title": "Ajustes",
+            "icon": "sap-icon://action-settings"
+        }
+    ]
+}

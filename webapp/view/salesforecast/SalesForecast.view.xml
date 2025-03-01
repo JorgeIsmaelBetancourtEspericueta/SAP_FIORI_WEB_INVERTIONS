@@ -1,15 +1,37 @@
 <mvc:View
     controllerName="com.inv.sapfioriwebinvertions.controller.SalesForecast"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:tnt="sap.tnt"
+    xmlns:f="sap.f"
     xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
 >
-    <m:Page
-        id="IdPageSalesForecast"
-        title="{i18n>title}"
+    <tnt:ToolPage
+        id="IdToolPage1SalesForecast"
+        visible="true"
     >
-        <m:Text
-            id="IdText1SalesForecast"
-            text="CONTENIDO DE LA PAGINA PRINCIPAL DEL PRONOSTICO DE VENTAS"
-        />
-    </m:Page>
+        <tnt:header>
+            <f:ShellBar
+                id="IdShellBar1SalesForecast"
+                title="Pronostico de Ventas"
+                homeIcon="./resources/images/logo_sap.png"
+                showMenuButton="true"
+                menuButtonPressed="onMenuButtonPress"
+            >
+                <f:profile>
+                    <m:Avatar
+                        id="IdAvatar1SalesForecast"
+                        initials="UI"
+                        press="onAvatarPress"
+                    />
+                </f:profile>
+            </f:ShellBar>
+        </tnt:header>
+        <tnt:sideContent>
+            <core:Fragment
+                fragmentName="com.inv.sapfioriwebinvertions.view.salesforecast.components.SideNavigation"
+                type="XML"
+            />
+        </tnt:sideContent>
+    </tnt:ToolPage>
 </mvc:View>
