@@ -6,6 +6,8 @@ sap.ui.define(
     "sap/m/List",
     "sap/m/StandardListItem",
     "sap/m/PlacementType",
+    "sap/ui/core/BusyIndicator",
+    "sap/m/MessageToast",
   ],
   function (
     BaseController,
@@ -13,14 +15,21 @@ sap.ui.define(
     Popover,
     List,
     StandardListItem,
-    PlacementType
+    PlacementType,
+    BusyIndicator,
+    MessageToast
   ) {
     "use strict";
 
     return BaseController.extend(
-      "com.inv.sapfioriwebinvertions.controller.SalesForecast",
+      "com.inv.sapfioriwebinvertions.controller.SalesForecastMainTable",
       {
         onInit: function () {
+          let oRouter = this.getRouter();
+          oRouter
+            .getRoute("RouteSalesForecast")
+            .attachPatternMatched(this._onRouteMatched, this);
+
           let oNavigationModel = new JSONModel({
             selectedKey: "inicio",
             navigation: [
@@ -38,7 +47,6 @@ sap.ui.define(
                 title: "Cerrar sesión",
                 icon: "sap-icon://system-exit",
               },
-
               {
                 key: "page03",
                 title: "Login (Cambiar usuario)",
@@ -59,7 +67,6 @@ sap.ui.define(
                   },
                 ],
               },
-
               {
                 id: "50",
                 key: "page50",
@@ -84,8 +91,7 @@ sap.ui.define(
                     this.oPopover.close();
                     this.getRouter().navTo(
                       "RouteLogin",
-                      {},
-                      true /*no history*/
+                      {} /* sin historial */
                     );
                   }.bind(this),
                 }),
@@ -94,16 +100,94 @@ sap.ui.define(
           });
         },
 
-        //* FIC: On Menu (hamburguer) Button Press
+        //* Carga de datos al cambiar de ruta
+        // _onRouteMatched: async function () {
+        //   BusyIndicator.show(0);
+        //   const oTable = this.byId("IdTable1SalesForecastMainTable");
+        //   const token = this.decryptDataFromStorage("token");
+
+        //   if (!token) {
+        //     BusyIndicator.hide();
+        //     return;
+        //   }
+
+        //   oTable.setModel(new JSONModel([]));
+
+        //   try {
+        //     const response = await this.GetSalesForecastByFilter(
+        //       { ProcessType: "get", dbServer: "PRD" },
+        //       token
+        //     );
+
+        //     if (typeof response === "string") {
+        //       throw new Error(response);
+        //     }
+
+        //     oTable.setModel(new JSONModel(response));
+        //   } catch (error) {
+        //     MessageToast.show(error);
+        //     oTable.setModel(new JSONModel());
+        //   } finally {
+        //     BusyIndicator.hide();
+        //   }
+        // },
+
+        _onRouteMatched: async function () {
+          BusyIndicator.show(0);
+          const oTable = this.byId("IdTable1SalesForecastMainTable");
+
+          // Inicialmente, limpia el modelo de la tabla
+          oTable.setModel(new JSONModel([]));
+
+          try {
+            // Carga el modelo JSON desde el archivo
+            const oModel = await this._loadLocalModel();
+            oTable.setModel(oModel); // Asigna el modelo a la tabla
+          } catch (error) {
+            MessageToast.show(error.message);
+            oTable.setModel(new JSONModel());
+          } finally {
+            BusyIndicator.hide();
+          }
+        },
+
+        _loadLocalModel: function () {
+          return new Promise((resolve, reject) => {
+            // Carga los datos del archivo JSON
+            jQuery.sap.require("sap.ui.core.util.File");
+            jQuery.ajax({
+              url: "resources/jsons/salesforecast.json", // Ruta al archivo JSON
+              dataType: "json",
+              success: function (data) {
+                // Verifica si los datos están presentes
+                if (
+                  data &&
+                  data.value &&
+                  data.value[0] &&
+                  data.value[0].data[0] &&
+                  data.value[0].data[0].dataRes
+                ) {
+                  // Resuelve el modelo con los datos correctos
+                  resolve(new JSONModel(data.value[0].data[0].dataRes));
+                } else {
+                  reject(new Error("Datos no encontrados en el archivo JSON"));
+                }
+              },
+              error: function () {
+                reject(new Error("Error al cargar el archivo JSON"));
+              },
+            });
+          });
+        },
+
+        //* Alternar menú lateral
         onMenuButtonPress: function () {
           let toolPage = this.byId("IdToolPage1SalesForecast");
           toolPage.setSideExpanded(!toolPage.getSideExpanded());
         },
 
-        //* Avatar Press
+        //* Mostrar opciones en el avatar
         onAvatarPress: function (oEvent) {
-          console.log("Avatar pressed");
-
           let oMyAvatar = oEvent.getSource();
           if (!this.oPopover.isOpen()) {
             this.oPopover.openBy(oMyAvatar);

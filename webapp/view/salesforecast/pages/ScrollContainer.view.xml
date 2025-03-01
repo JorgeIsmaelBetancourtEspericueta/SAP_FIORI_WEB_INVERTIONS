@@ -1,0 +1,27 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    controllerName="com.inv.sapfioriwebinvertions.controller.SalesForecast"
+>
+    <!-- Navigation Container -->
+    <m:NavContainer
+        id="IdNavContainer1SalesForecast"
+        initialPage="ScrollContainer20SalesForecast"
+    >
+        <m:pages>
+            <!-- Page 20 (Pronostico de Ventas Table) -->
+            <m:ScrollContainer
+                id="ScrollContainer20SalesForecast"
+                horizontal="false"
+                vertical="true"
+                height="100%"
+            >
+                <mvc:XMLView
+                    id="XMLView20SalesForecastTableView"
+                    viewName="com.inv.sapfioriwebinvertions.view.salesforecast.pages.SalesForecastMainTable"
+                />
+            </m:ScrollContainer>
+        </m:pages>
+    </m:NavContainer>
+</mvc:View>

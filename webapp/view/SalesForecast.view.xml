@@ -33,5 +33,27 @@
                 type="XML"
             />
         </tnt:sideContent>
+        <tnt:mainContents>
+            <m:NavContainer
+                id="IdNavContainer1SalesForecast"
+                initialPage="page20"
+            >
+                <m:pages>
+                    <!--FIC: (Page20) Pronostico de Ventas (Principal Data Table) -->
+                    <!--FIC: (Page20) Pronostico de Ventas (Principal Data Table) -->
+                    <m:ScrollContainer
+                        id="ScrollContainer20SalesForecast"
+                        horizontal="false"
+                        vertical="true"
+                        height="100%"
+                    >
+                        <mvc:XMLView
+                            id="XMLView20SalesForecastTableView"
+                            viewName="com.inv.sapfioriwebinvertions.view.salesforecast.pages.SalesForecastMainTable"
+                        />
+                    </m:ScrollContainer>
+                </m:pages>
+            </m:NavContainer>
+        </tnt:mainContents>
     </tnt:ToolPage>
 </mvc:View>

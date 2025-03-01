@@ -6,6 +6,8 @@
         "allowJs": true,
         "types": [
             "@sapui5/ts-types"
-        ]
-    }
+        ],
+        "lib": ["es2017", "dom"]
+    },
+    "exclude": ["node_modules", "dist"]
 }
