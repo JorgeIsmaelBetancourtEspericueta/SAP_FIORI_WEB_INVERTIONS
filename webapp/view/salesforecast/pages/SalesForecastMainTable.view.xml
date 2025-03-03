@@ -1,15 +1,15 @@
 <mvc:View
-    controllerName="com.inv.sapfioriwebinvertions.controller.SalesForecast"
+    controllerName="com.inv.sapfioriwebinvertions.controller.salesforecast.pages.SalesForecastMainTable"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
-    xmlns:ui="sap.ui.table"
+    xmlns:tl="sap.ui.table"
     displayBlock="true"
     height="100%"
     busyIndicatorDelay="0"
 >
-    <ui:Table
+    <tl:Table
         id="IdTable1SalesForecastMainTable"
-        rows="{/}"
+        rows="{/value/0/data/0/dataRes}"
         selectionMode="Single"
         alternateRowColors="true"
         selectionBehavior="RowOnly"
@@ -18,214 +18,215 @@
         rowActionCount="2"
         busyIndicatorDelay="0"
     >
-        <ui:columns>
-            <ui:Column
+        <tl:columns>
+            <!-- Resto del codigo -->
+            <tl:Column
                 sortProperty="SEMANO"
                 width="5rem"
             >
                 <Label text="S/A" />
-                <ui:template>
+                <tl:template>
                     <Text
                         text="{SEMANO}"
                         wrapping="false"
                     />
-                </ui:template>
-            </ui:Column>
+                </tl:template>
+            </tl:Column>
 
-            <ui:Column
+            <tl:Column
                 sortProperty="ORGVTA"
                 width="4rem"
             >
                 <Label text="ORG" />
-                <ui:template>
+                <tl:template>
                     <Text
                         text="{ORGVTA}"
                         wrapping="false"
                     />
-                </ui:template>
-            </ui:Column>
+                </tl:template>
+            </tl:Column>
 
-            <ui:Column
+            <tl:Column
                 sortProperty="NOMBREORGVTA"
                 width="12rem"
             >
                 <Label text="NOMBRE ORG VTA" />
-                <ui:template>
+                <tl:template>
                     <Text
                         text="{NOMBREORGVTA}"
                         wrapping="false"
                     />
-                </ui:template>
-            </ui:Column>
+                </tl:template>
+            </tl:Column>
 
-            <ui:Column
+            <tl:Column
                 sortProperty="MATERIAL"
                 width="4rem"
             >
                 <Label text="MAT" />
-                <ui:template>
+                <tl:template>
                     <Text
                         text="{MATERIAL}"
                         wrapping="false"
                     />
-                </ui:template>
-            </ui:Column>
+                </tl:template>
+            </tl:Column>
 
-            <ui:Column
+            <tl:Column
                 sortProperty="NOMBREMATERIAL"
                 width="13rem"
             >
                 <Label text="NOMBRE MATERIAL" />
-                <ui:template>
+                <tl:template>
                     <Text
                         text="{NOMBREMATERIAL}"
                         wrapping="false"
                     />
-                </ui:template>
-            </ui:Column>
+                </tl:template>
+            </tl:Column>
 
-            <ui:Column
+            <tl:Column
                 sortProperty="CATEGORIA"
                 width="6rem"
             >
                 <Label text="CATEGORIA" />
-                <ui:template>
+                <tl:template>
                     <Text
                         text="{CATEGORIA}"
                         wrapping="false"
                     />
-                </ui:template>
-            </ui:Column>
+                </tl:template>
+            </tl:Column>
 
-            <ui:Column
+            <tl:Column
                 sortProperty="MARCA"
                 width="5rem"
             >
                 <Label text="MARCA" />
-                <ui:template>
+                <tl:template>
                     <Text
                         text="{MARCA}"
                         wrapping="false"
                     />
-                </ui:template>
-            </ui:Column>
+                </tl:template>
+            </tl:Column>
 
-            <ui:Column
+            <tl:Column
                 sortProperty="PRESENTACION"
                 width="3rem"
             >
                 <Label text="PRE" />
-                <ui:template>
+                <tl:template>
                     <Text
                         text="{PRESENTACION}"
                         wrapping="false"
                     />
-                </ui:template>
-            </ui:Column>
+                </tl:template>
+            </tl:Column>
 
-            <ui:Column
+            <tl:Column
                 sortProperty="TAMANO"
                 width="4rem"
             >
                 <Label text="TAMA" />
-                <ui:template>
+                <tl:template>
                     <Text
                         text="{TAMANO}"
                         wrapping="false"
                     />
-                </ui:template>
-            </ui:Column>
+                </tl:template>
+            </tl:Column>
 
-            <ui:Column
+            <tl:Column
                 sortProperty="SABOR"
                 width="5rem"
             >
                 <Label text="SABOR" />
-                <ui:template>
+                <tl:template>
                     <Text
                         text="{SABOR}"
                         wrapping="false"
                     />
-                </ui:template>
-            </ui:Column>
+                </tl:template>
+            </tl:Column>
 
-            <ui:Column
+            <tl:Column
                 sortProperty="ENVASE"
                 width="4rem"
             >
                 <Label text="ENV" />
-                <ui:template>
+                <tl:template>
                     <Text
                         text="{ENVASE}"
                         wrapping="false"
                     />
-                </ui:template>
-            </ui:Column>
+                </tl:template>
+            </tl:Column>
 
-            <ui:Column
+            <tl:Column
                 sortProperty="PIEZASCJA"
                 width="3rem"
             >
                 <Label text="P/C" />
-                <ui:template>
+                <tl:template>
                     <Text
                         text="{PIEZASCJA}"
                         wrapping="false"
                     />
-                </ui:template>
-            </ui:Column>
+                </tl:template>
+            </tl:Column>
 
-            <ui:Column
+            <tl:Column
                 sortProperty="BOTELLAS"
                 width="4rem"
             >
                 <Label text="BOT" />
-                <ui:template>
+                <tl:template>
                     <Text
                         text="{BOTELLAS}"
                         wrapping="false"
                     />
-                </ui:template>
-            </ui:Column>
+                </tl:template>
+            </tl:Column>
 
-            <ui:Column
+            <tl:Column
                 sortProperty="CJA"
                 width="5rem"
             >
                 <Label text="CJA" />
-                <ui:template>
+                <tl:template>
                     <Text
                         text="{CJA}"
                         wrapping="false"
                     />
-                </ui:template>
-            </ui:Column>
+                </tl:template>
+            </tl:Column>
 
-            <ui:Column
+            <tl:Column
                 sortProperty="CF"
                 width="5rem"
             >
                 <Label text="CF" />
-                <ui:template>
+                <tl:template>
                     <Text
                         text="{CF}"
                         wrapping="false"
                     />
-                </ui:template>
-            </ui:Column>
+                </tl:template>
+            </tl:Column>
 
-            <ui:Column
+            <tl:Column
                 sortProperty="CU"
                 width="5rem"
             >
                 <Label text="CU" />
-                <ui:template>
+                <tl:template>
                     <Text
                         text="{CU}"
                         wrapping="false"
                     />
-                </ui:template>
-            </ui:Column>
-        </ui:columns>
-    </ui:Table>
+                </tl:template>
+            </tl:Column>
+        </tl:columns>
+    </tl:Table>
 </mvc:View>

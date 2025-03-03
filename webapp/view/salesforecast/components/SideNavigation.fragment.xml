@@ -1,18 +1,19 @@
 <SideNavigation
     id="IdSideNavigation1SalesForecast"
     xmlns="sap.tnt"
-    xmlns:core="sap.ui.core"
     expanded="true"
-    selectedKey="{/selectedKey}"
+    selectedKey="{salesForecastNavModel>/selectedKey}"
     itemSelect="onItemSelect"
 >
     <NavigationList
         id="IdNavigationList1SalesForecast"
-        items="{path: '/navigation'}"
+        items="{path: 'salesForecastNavModel>/navigation'}"
     >
-        <core:Fragment
-            fragmentName="com.inv.sapfioriwebinvertions.view.salesforecast.components.NavigationList"
-            type="XML"
+        <NavigationListItem
+            id="IdNavigationListItem1SalesForecast"
+            text="{salesForecastNavModel>title}"
+            icon="{salesForecastNavModel>icon}"
+            key="{salesForecastNavModel>key}"
         />
     </NavigationList>
 </SideNavigation>
