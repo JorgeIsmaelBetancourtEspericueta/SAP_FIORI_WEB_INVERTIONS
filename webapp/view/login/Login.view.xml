@@ -1,0 +1,15 @@
+<mvc:View
+    controllerName="com.inv.sapfioriwebinvertions.controller.Login"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+>
+    <m:Page
+        id="IdPageLogin"
+        title="{i18n>title}"
+    >
+        <m:Text
+            id="IdText1Login"
+            text="CONTENIDO DE LA PAGINA INICIAL PARA HACER LOGIN"
+        />
+    </m:Page>
+</mvc:View>

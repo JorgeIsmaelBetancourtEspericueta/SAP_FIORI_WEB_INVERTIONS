@@ -17,7 +17,9 @@
                 homeIcon="./resources/images/logo_sap.png"
                 showMenuButton="true"
                 menuButtonPressed="onMenuButtonPress"
+                class="customShellBar"
             >
+                <!-- Añade la clase aquí -->
                 <f:profile>
                     <m:Avatar
                         id="IdAvatar1SalesForecast"
