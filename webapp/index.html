@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Modulo de ventas</title>
+    <title>Módulo de Ventas</title>
     <style>
       html,
       body,
@@ -17,16 +17,15 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <script
+      src="https://ui5.sap.com/resources/sap-ui-core.js"
       id="sap-ui-bootstrap"
-      src="resources/sap-ui-core.js"
-      data-sap-ui-theme="sap_horizon"
-      data-sap-ui-resourceroots='{
-            "com.inv.sapfioriwebinvertions": "./"
-        }'
-      data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
+      data-sap-ui-libs="sap.m,sap.ui.comp"
+      data-sap-ui-theme="sap_fiori_3"
       data-sap-ui-compatVersion="edge"
-      data-sap-ui-async="true"
-      data-sap-ui-frameOptions="trusted"
+      data-sap-ui-onInit="module:sap/ui/core/ComponentSupport"
+      data-sap-ui-resourceroots='{
+        "com.inv.sapfioriwebinvertions": "./"
+      }'
     ></script>
   </head>
   <body class="sapUiBody sapUiSizeCompact" id="content">

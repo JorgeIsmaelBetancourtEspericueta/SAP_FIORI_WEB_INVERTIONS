@@ -1,0 +1,38 @@
+<mvc:View
+    controllerName="com.inv.sapfioriwebinvertions.controller.AudioCapture"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    displayBlock="true"
+>
+    <m:Page title="Captura y Reproducción de Audio">
+        <m:content>
+            <m:VBox class="sapUiSmallMargin">
+                <m:Text
+                    text="Presiona el botón para grabar audio y reproducirlo."
+                />
+                <m:Button
+                    id="startRecording"
+                    text="Grabar Audio"
+                    press="onStartRecording"
+                />
+                <m:Button
+                    id="stopRecording"
+                    text="Detener Grabación"
+                    press="onStopRecording"
+                    enabled="false"
+                />
+                <m:Button
+                    id="playAudio"
+                    text="Reproducir Audio"
+                    press="onPlayAudio"
+                    enabled="false"
+                />
+                <core:HTML
+                    id="audioPlayer"
+                    visible="false"
+                />
+            </m:VBox>
+        </m:content>
+    </m:Page>
+</mvc:View>

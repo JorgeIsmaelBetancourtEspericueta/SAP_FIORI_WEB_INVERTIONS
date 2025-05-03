@@ -1,0 +1,32 @@
+<mvc:View
+    controllerName="com.inv.sapfioriwebinvertions.controller.PhotoCapture"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    displayBlock="true"
+>
+    <Page title="Captura de Foto">
+        <content>
+            <VBox class="sapUiSmallMargin">
+                <Text text="Usa tu cámara para capturar una imagen." />
+                <Button
+                    text="Abrir cámara"
+                    press="onOpenCamera"
+                />
+
+                <core:HTML
+                    content="&lt;video id='videoStream' autoplay playsinline style='width:100%; max-height:300px;'&gt;&lt;/video&gt;"
+                />
+
+                <Button
+                    text="Tomar Foto"
+                    press="onTakePhoto"
+                />
+                <Image
+                    id="capturedImage"
+                    visible="false"
+                />
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

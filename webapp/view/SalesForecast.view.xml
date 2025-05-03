@@ -1,9 +1,7 @@
 <mvc:View
     controllerName="com.inv.sapfioriwebinvertions.controller.SalesForecast"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns:tnt="sap.tnt"
-    xmlns:f="sap.f"
-    xmlns:m="sap.m"
+    xmlns="sap.m"
     xmlns:core="sap.ui.core"
 >
     <tnt:ToolPage

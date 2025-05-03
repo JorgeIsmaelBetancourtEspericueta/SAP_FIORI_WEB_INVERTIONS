@@ -44,7 +44,8 @@
         "sap.m": {},
         "sap.ui.core": {},
         "sap.tnt": {},
-        "sap.f": {}
+        "sap.f": {},
+        "sap.ui.comp": {}
       }
     },
     "contentDensities": {
@@ -93,6 +94,21 @@
           "name": "RouteSalesForecast",
           "pattern": "salesforecast",
           "target": ["TargetSalesForecast"]
+        },
+        {
+          "name": "RoutePhotoCapture",
+          "pattern": "photocapture",
+          "target": "TargetPhotoCapture"
+        },
+        {
+          "name": "RouteAudioCapture",
+          "pattern": "audiocapture",
+          "target": "TargetAudioCapture"
+        },
+        {
+          "name": "RoutePrueba",
+          "pattern": "prueba",
+          "target": "TargetPrueba"
         }
       ],
       "targets": {
@@ -121,6 +137,33 @@
           "transition": "slide",
           "clearControlAggregation": false,
           "viewlevel": 3,
+          "viewPath": "com.inv.sapfioriwebinvertions.view"
+        },
+        "TargetPhotoCapture": {
+          "viewId": "PhotoCapture",
+          "viewName": "PhotoCapture",
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewLevel": 4,
+          "viewPath": "com.inv.sapfioriwebinvertions.view"
+        },
+        "TargetAudioCapture": {
+          "viewId": "AudioCapture",
+          "viewName": "AudioCapture",
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewLevel": 5,
+          "viewPath": "com.inv.sapfioriwebinvertions.view"
+        },
+        "TargetPrueba": {
+          "viewId": "Prueba",
+          "viewName": "Prueba",
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewLevel": 6,
           "viewPath": "com.inv.sapfioriwebinvertions.view"
         }
       }

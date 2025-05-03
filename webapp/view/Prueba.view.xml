@@ -1,0 +1,123 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    controllerName="com.inv.sapfioriwebinvertions.controller.Prueba"
+>
+    <Page class="fondoPersonalizado">
+        <subHeader>
+            <Toolbar
+                design="Transparent"
+                width="100%"
+            >
+                <HBox alignItems="Center">
+                    <Image
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/SAP_2011_logo.svg/2560px-SAP_2011_logo.svg.png"
+                        width="70px"
+                        height="30px"
+                    />
+                    <Title
+                        text="Gestión de Usuarios"
+                        level="H1"
+                        class="tituloGrande"
+                    />
+                </HBox>
+
+                <ToolbarSpacer />
+
+                <SearchField
+                    placeholder="Ingrese el nombre"
+                    liveChange=".onSearch"
+                    width="30%"
+                />
+
+                <ToolbarSpacer />
+
+                <Button
+                    text="Crear"
+                    press="onCrear"
+                    icon="sap-icon://add"
+                    type="Emphasized"
+                    class="btnCrear"
+                />
+                <Button
+                    text="Editar"
+                    press="onEditar"
+                    icon="sap-icon://edit"
+                    enabled="{= !!${estado>/usuarioSeleccionado} }"
+                    class="btnEditar"
+                />
+                <Button
+                    text="Eliminar"
+                    press="onEliminar"
+                    icon="sap-icon://delete"
+                    enabled="{= !!${estado>/usuarioSeleccionado} }"
+                    class="btnEliminar"
+                />
+                <Button
+                    text="Guardar"
+                    press="onGuardar"
+                    icon="sap-icon://save"
+                    visible="{estado>/editando}"
+                    class="btnGuardar"
+                />
+                <Button
+                    text="Cancelar"
+                    press="onCancelar"
+                    icon="sap-icon://decline"
+                    visible="{estado>/editando}"
+                    class="btnCancelar"
+                />
+            </Toolbar>
+        </subHeader>
+
+        <content>
+            <VBox
+                fitContainer="true"
+                class="sapUiContentPadding"
+            >
+                <Table
+                    id="tablaUsuarios"
+                    inset="false"
+                    width="100%"
+                    items="{usuarios>/usuarios}"
+                    mode="SingleSelectMaster"
+                    selectionChange="onSeleccionar"
+                >
+                    <columns>
+                        <Column>
+                            <Text text="Usuario" />
+                        </Column>
+                        <Column>
+                            <Text text="Alias" />
+                        </Column>
+                        <Column>
+                            <Text text="Correo" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem
+                            type="Active"
+                            selected="{= ${usuarios>USERID} === ${estado>/usuarioSeleccionado} }"
+                        >
+                            <cells>
+                                <Input
+                                    value="{usuarios>USERNAME}"
+                                    editable="{estado>/editando}"
+                                />
+                                <Input
+                                    value="{usuarios>ALIAS}"
+                                    editable="{estado>/editando}"
+                                />
+                                <Input
+                                    value="{usuarios>EMAIL}"
+                                    editable="{estado>/editando}"
+                                />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
