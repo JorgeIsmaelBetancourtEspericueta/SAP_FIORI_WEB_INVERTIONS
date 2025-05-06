@@ -109,6 +109,11 @@
           "name": "RoutePrueba",
           "pattern": "prueba",
           "target": "TargetPrueba"
+        },
+        {
+          "name": "RouteValues",
+          "pattern": "values",
+          "target": "TargetValues"
         }
       ],
       "targets": {
@@ -165,6 +170,12 @@
           "clearControlAggregation": false,
           "viewLevel": 6,
           "viewPath": "com.inv.sapfioriwebinvertions.view"
+        },
+        "TargetValues": {
+          "viewId": "Values",
+          "viewName": "Values",
+          "viewType": "XML",
+          "transition": "slide"
         }
       }
     },

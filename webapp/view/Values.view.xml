@@ -1,0 +1,58 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="com.inv.sapfioriwebinvertions.controller.Values"
+>
+    <Page>
+        <subHeader>
+            <Toolbar design="Transparent">
+                <Title text="Gestión de Valores" level="H1" />
+                <ToolbarSpacer />
+                <SearchField placeholder="Buscar valor" liveChange=".onSearch" width="30%" />
+                <ToolbarSpacer />
+                <Button text="Crear" press="onCrear" icon="sap-icon://add" type="Emphasized" />
+                <Button text="Editar" press="onEditar" icon="sap-icon://edit"
+                        enabled="{= !!${estado>/valorSeleccionado} }" />
+                <Button text="Eliminar" press="onEliminar" icon="sap-icon://delete"
+                        enabled="{= !!${estado>/valorSeleccionado} }" />
+                <Button text="Guardar" press="onGuardar" icon="sap-icon://save"
+                        visible="{estado>/editando}" />
+                <Button text="Cancelar" press="onCancelar" icon="sap-icon://decline"
+                        visible="{estado>/editando}" />
+            </Toolbar>
+        </subHeader>
+
+        <content>
+            <VBox class="sapUiContentPadding">
+                <Table id="tablaValores" inset="false" width="100%" items="{valores>/valores}"
+                       mode="SingleSelectMaster" selectionChange="onSeleccionar">
+                    <columns>
+                        
+                        <Column><Text text="Etiqueta (LABELID)" /></Column>
+                        <Column><Text text="ID Padre (VALUEPAID)" /></Column>
+                        <Column><Text text="Valor" /></Column>
+                        <Column><Text text="Alias" /></Column>
+                        <Column><Text text="Descripción" /></Column>
+                        <Column><Text text="ID del Valor (VALUEID)" /></Column>
+                        <Column><Text text="Imagen" /></Column>
+                        <Column><Text text="Ruta" /></Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem type="Active">
+                            <cells>
+                                <Input value="{valores>LABELID}" editable="{estado>/editando}" />
+                                <Input value="{valores>VALUEPAID}" editable="{estado>/editando}" />
+                                <Input value="{valores>VALUE}" editable="{estado>/editando}" />
+                                <Input value="{valores>ALIAS}" editable="{estado>/editando}" />
+                                <Input value="{valores>DESCRIPTION}" editable="{estado>/editando}"/>
+                                <Input value="{valores>VALUEID}" />
+                                <Input value="{valores>IMAGE}" editable="{estado>/editando}"/>
+                                <Input value="{valores>ROUTE}" editable="{estado>/editando}"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
